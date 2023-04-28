@@ -24,7 +24,7 @@ Desktop view
 ### Links
 
 - Solution URL: [https://github.com/teoh4770/data-storage-component/](https://github.com/teoh4770/data-storage-component/)
-- Live Site URL: [Click to see the solution](https://teoh4770.github.io/data-storage-component/)
+- Live Site URL: [https://teoh4770.github.io/data-storage-component/](https://teoh4770.github.io/data-storage-component/)
 
 ## My process
 
