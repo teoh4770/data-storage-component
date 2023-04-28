@@ -78,7 +78,7 @@ body {
 }
 
 .color-gray {
-  color: var(--gray-purple);
+  color: var(--pale-purple);
 }
 
 .color-white {
@@ -157,16 +157,33 @@ body {
   cursor: pointer;
 }
 
-.container__btn:hover {
-  animation-name: gelatine;
-  animation-duration: 500ms;
-  animation-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  outline: 2px solid var(--btn-color);
-  outline-offset: 2px;
+@media (hover: hover) {
+  .gelatine {
+    animation-name: gelatine;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+    animation-fill-mode: forwards;
+    filter: invert(1);
+  }
+
+  .container__btn:hover {
+    outline: 2px solid var(--btn-color);
+    outline-offset: 2px;
+    filter: invert(1);
+  }
+
+  .container__btn:focus {
+    outline: 2px solid var(--btn-color);
+    outline-offset: 2px;
+  }
 }
 
-.container__btn:active {
-  filter: invert(1);
+@media (hover: none) {
+  .container__btn:focus {
+    filter: invert(1);
+    outline: 2px solid var(--btn-color);
+    outline-offset: 2px;
+  }
 }
 
 .container--second {
