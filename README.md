@@ -23,8 +23,8 @@ Desktop view
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/teoh4770/data-storage-component/](https://github.com/teoh4770/data-storage-component/)
+- Live Site URL: [Click to see the solution](https://teoh4770.github.io/data-storage-component/)
 
 ## My process
 
@@ -98,8 +98,8 @@ buttons.forEach((button) => {
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Website - [CheeKianTeoh](https://github.com/teoh4770/)
+- Frontend Mentor - [teoh4770](https://www.frontendmentor.io/profile/teoh4770)
 
 
 ## Acknowledgments
