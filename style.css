@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* custom property */
+:root {
+  /*** color ***/
+  --light-purple: hsl(230, 51%, 26%);
+  --medium-dark-purple: hsl(228, 56%, 26%);
+  --very-dark-purple: hsl(229, 57%, 11%);
+  --pale-purple: hsl(243, 100%, 93%);
+  --gray-purple: hsl(229, 7%, 55%);
+
+  /*** font ***/
+  --fs-normal: 16px;
+  --ff-sans-serif: "Raleway", sans-serif;
+}
+
+/* general styling */
+body {
+  font-size: var(--fs-normal);
+  font-family: var(--ff-sans-serif);
+  font-weight: 400;
+  background: url(./images/background-desktop.svg);
+  background-color: var(--very-dark-purple);
+  background-repeat: no-repeat;
+  background-position: top;
+  max-height: 100vh;
+  overflow: hidden;
+}
+/* end general styling */
+
+/* utility class */
+.bold {
+  font-weight: 700;
+}
+
+.color-gray {
+  color: var(--gray-purple);
+}
+
+.color-white {
+  color: var(--pale-purple);
+}
+
+.color-gradient {
+  background: -webkit-linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-lg {
+  font-size: 2rem;
+}
+/* end utility class */
+
+/* styling */
+.data-storage-component {
+  margin-inline: 1rem;
+  margin-top: 15rem;
+}
+
+.data-storage-component__wrapper {
+  display: flex;
+  align-items: end;
+  gap: 1.5rem;
+  max-width: 950px;
+  margin-inline: auto;
+}
+
+@media (max-width: 705px) {
+  .data-storage-component__wrapper {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+.container {
+  --normal-br: 7px;
+  min-width: 325px;
+  padding: 3rem;
+  background-color: var(--light-purple);
+  border-radius: var(--normal-br);
+  color: var(--pale-purple);
+  transition: box-shadow 0.25s ease-in;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.container--first {
+  padding-right: 0;
+  border-top-right-radius: 40%;
+  max-width: 325px;
+}
+
+.container__logo {
+  margin-bottom: 2rem;
+}
+
+.container__btn-container {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.container__btn {
+  --btn-color: var(--very-dark-purple);
+  border: none;
+  border-radius: var(--normal-br);
+  background-color: var(--btn-color);
+  width: 45px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.container__btn:hover {
+  animation-name: gelatine;
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+  outline: 2px solid var(--btn-color);
+  outline-offset: 2px;
+}
+
+.container__btn:active {
+  filter: invert(1);
+}
+
+.container--second {
+  padding-bottom: 4rem;
+  flex-grow: 1;
+  position: relative;
+}
+
+@media (max-width: 705px) {
+  .container--second {
+    padding-bottom: 4rem;
+    flex-basis: unset;
+  }
+}
+
+.popup {
+  position: absolute;
+  top: -3rem;
+  right: 2rem;
+}
+
+@media (max-width: 550px) {
+  .popup {
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%);
+  }
+
+  .popup--arrow {
+    display: none;
+  }
+}
+
+.popup-container {
+  --popup-bg: white;
+  max-width: max-content;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--popup-bg);
+  color: var(--very-dark-purple);
+  border-radius: var(--normal-br);
+  position: relative;
+}
+
+.popup--arrow {
+  --arrow-size: 1.5rem;
+  /* using clip path to make a triangle */
+  background-color: var(--popup-bg);
+  width: var(--arrow-size);
+  aspect-ratio: 1;
+  clip-path: polygon(100% 100%, 0 0, 100% 0);
+  position: absolute;
+  right: 0;
+  bottom: calc(var(--arrow-size) * -1 + 10px);
+}
+
+.progress-bar,
+.progress-bar__fill {
+  --height: 1rem;
+  height: var(--height);
+  margin-top: 1rem;
+  border-radius: var(--normal-br);
+  background-color: var(--very-dark-purple);
+  position: relative;
+}
+
+.progress-bar::before {
+  content: attr(data-min-label);
+}
+
+.progress-bar::after {
+  content: attr(data-max-label);
+  right: 0;
+}
+
+.progress-bar::before,
+.progress-bar::after {
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  top: 1.25rem;
+}
+
+.progress-bar__fill {
+  position: relative;
+  background-color: unset;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  max-width: 85%;
+  width: 100%;
+  border: 1.5px solid var(--medium-dark-purple);
+  animation: progress-forward 1s ease-in-out;
+}
+
+/* the dot */
+.progress-bar__fill::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(var(--height) - 5px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: white;
+}
+
+@keyframes progress-forward {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes gelatine {
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}
+
+@-webkit-keyframes gelatine {
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+  from,
+  to {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  25% {
+    -webkit-transform: scale(0.9, 1.1);
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    -webkit-transform: scale(1.1, 0.9);
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    -webkit-transform: scale(0.95, 1.05);
+    transform: scale(0.95, 1.05);
+  }
+}

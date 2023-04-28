@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>CheeKianTeoh | Fylo data storage component</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="data-storage-component">
+    <div class="data-storage-component__wrapper">
+      <div class="container container--first">
+        <img class="container__logo" src="./images/logo.svg" alt="logo">
+        <!-- action btns -->
+        <div class="container__btn-container">
+          <!-- accessibility: naming -->
+          <button class="container__btn">
+            <img class="container__btn-logo" src="./images/icon-document.svg" alt="document icon">
+          </button>
+          <!-- accessibility: naming -->
+          <button class="container__btn">
+            <img class="container__btn-logo" src="./images/icon-folder.svg" alt="folder icon">
+          </button>
+          <!-- accessibility: naming -->
+          <button class="container__btn">
+            <img class="container__btn-logo" src="./images/icon-upload.svg" alt="upload icon">
+          </button>
+        </div>
+      </div>
+      <div class="container container--second" data-tooltip="185GB left">
+        <div class="popup">
+          <div class="popup-container">
+            <div class="popup--content"><span class="bold font-lg color-gradient">185 </span>GB Left</div>
+            <div class="popup--arrow"></div>
+          </div>
+        </div>
+        <p class="container__description color-gray">
+          You’ve used <span class="bold color-white">815 GB</span> of your storage
+        </p>
+        <div class="progress-bar" data-min-label="0GB" data-max-label="1000GB">
+          <!-- before: 0 GB    -->
+          <!-- after : 1000 GB -->
+          <div class="progress-bar__fill" data-min="0" data-max="1000" data-value="815">
+            <!-- contain a dot -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
