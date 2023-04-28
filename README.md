@@ -41,8 +41,7 @@ Desktop view
 
 To see how you can add code snippets, see below:
 
-```
-html
+```html
 <div class="popup">
   <div class="popup-container">
 	<div class="popup--content"><strong class="bold font-lg color-gradient">185 </strong>GB Left</div>
