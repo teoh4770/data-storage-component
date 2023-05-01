@@ -67,6 +67,7 @@ body {
   background-color: var(--very-dark-purple);
   background-repeat: no-repeat;
   background-position: top;
+  background-size: cover;
   max-height: 100vh;
   overflow: hidden;
 }
@@ -175,6 +176,7 @@ body {
   .container__btn:focus {
     outline: 2px solid var(--btn-color);
     outline-offset: 2px;
+    filter: invert(1);
   }
 }
 
